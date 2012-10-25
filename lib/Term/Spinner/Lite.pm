@@ -6,6 +6,7 @@ package Term::Spinner::Lite;
 
 use 5.010;
 use IO::Handle;
+use Time::HiRes qw(usleep);
 use Carp qw( croak );
 
 =head1 SYNOPSIS
@@ -88,6 +89,26 @@ sub spin_chars {
     $self->{'spin_chars'} = $aref;
 }
 
+=attr delay
+
+Gets or sets the delay between output in microseconds
+
+=cut
+
+sub delay {
+    my $self = shift;
+    my $microseconds = shift;
+
+    if ( not $microseconds ) {
+        if ( exists $self->{'delay'} ) {
+            return $self->{'delay'};
+        }
+        $microseconds = 0;
+    }
+
+    $self->{'delay'} = $microseconds;
+}
+
 sub _clear {
     my $self = shift;
 
@@ -133,6 +154,7 @@ sub next {
     $self->_clear if $self->count;
     print {$self->output_handle()} "${$self->spin_chars()}[$pos]";
     $pos = ($self->{'count'}++) % $self->_spin_char_size();
+    usleep($self->delay) if $self->delay;
 }
 
 =method done()
