@@ -4,7 +4,7 @@ use strict;
 use Test::More;
 use Term::Spinner::Lite;
 
-plan tests => 5;
+plan tests => 7;
 
 my $s = Term::Spinner::Lite->new();
 isa_ok($s, 'Term::Spinner::Lite', 'object created');
@@ -14,6 +14,9 @@ is($s->_spin_char_size, 4, "got 4 spin chars");
 is_deeply($s->spin_chars, [ qw(- \ | /) ], "spin_chars match");
 
 is($s->count, 0, "count is 0");
+
+is($s->delay, 0, "delay defaults to 0");
+is($s->delay(1000), 1000, "set delay to 1000 microsecs");
 
 $s->next for 1 .. 10;
 $s->done;
