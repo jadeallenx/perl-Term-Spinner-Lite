@@ -40,7 +40,7 @@ sub new {
 
 =attr output_handle
 
-Gets or sets the handle where output will be written. Be default, uses STDERR.
+Gets or sets the handle where output will be written. By default, uses STDERR.
 
 =cut
 
@@ -91,7 +91,8 @@ sub spin_chars {
 
 =attr delay
 
-Gets or sets the delay between output in microseconds
+Gets or sets the delay between state changes in microseconds. (A good value 
+for smooth spinning is 100000.) Defaults to 0.
 
 =cut
 
