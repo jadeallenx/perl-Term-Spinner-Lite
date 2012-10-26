@@ -4,7 +4,7 @@ Term::Spinner::Lite - A spinner without so much Moose in it
 
 # VERSION
 
-version 0.01
+version 0.02
 
 # SYNOPSIS
 
@@ -24,7 +24,7 @@ doesn't have any dependencies outside of modules shipped with Perl itself.
 
 ## output\_handle
 
-Gets or sets the handle where output will be written. Be default, uses STDERR.
+Gets or sets the handle where output will be written. By default, uses STDERR.
 
 ## spin\_chars
 
@@ -34,6 +34,11 @@ sequence "-" "\\" "|" "/".  This attribute must be set using an array ref, e.g.,
     [ qw( . o O o ) ]
 
 This attribute will croak by an attempt to set itself using anything else.
+
+## delay
+
+Gets or sets the delay between state changes in microseconds. (A good value 
+for smooth spinning is 100000.) Defaults to 0.
 
 # METHODS
 
