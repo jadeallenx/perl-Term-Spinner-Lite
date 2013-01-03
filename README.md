@@ -4,13 +4,17 @@ Term::Spinner::Lite - A spinner without so much Moose in it
 
 # VERSION
 
-version 0.02
+version 0.03
 
 # SYNOPSIS
 
+    use utf8;
+    use 5.010;
     use Term::Spinner::Lite;
-
-    my $s = Term::Spinner::Lite->new();
+    my $s = Term::Spinner::Lite->new(
+      delay => 100_000,
+      spin_chars => ['◑', '◒', '◐', '◓'],
+    );
 
     $s->next() for 1 .. 100_000;
     $s->done();
@@ -25,6 +29,8 @@ doesn't have any dependencies outside of modules shipped with Perl itself.
 ## output\_handle
 
 Gets or sets the handle where output will be written. By default, uses STDERR.
+You may pass an optional PerlIO encoding specification. By default it will use
+":utf8" in case you want to use UTF8 characters in your spinner.
 
 ## spin\_chars
 
