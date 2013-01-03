@@ -1,17 +1,20 @@
 #!/usr/bin/perl
 
 use strict;
+use utf8;
 use Test::More;
 use Term::Spinner::Lite;
 
-plan tests => 7;
+plan tests => 8;
 
 my $s = Term::Spinner::Lite->new();
 isa_ok($s, 'Term::Spinner::Lite', 'object created');
 
 is($s->_spin_char_size, 4, "got 4 spin chars");
 
-is_deeply($s->spin_chars, [ qw(- \ | /) ], "spin_chars match");
+is_deeply($s->spin_chars, [ qw(- \ | /) ], "default spin_chars match");
+
+is_deeply($s->spin_chars(['◑', '◒', '◐', '◓']), ['◑', '◒', '◐', '◓'], "utf8 spin chars match");
 
 is($s->count, 0, "count is 0");
 
