@@ -9,6 +9,8 @@ use IO::Handle;
 use Time::HiRes qw(usleep);
 use Carp qw( croak );
 
+=encoding UTF-8
+
 =head1 SYNOPSIS
 
   use utf8;

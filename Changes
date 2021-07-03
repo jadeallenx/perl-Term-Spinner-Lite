@@ -1,6 +1,7 @@
 Change history for Term-Spinner-Lite
 
 {{$NEXT}}
+            Set pod encoding to UTF-8
 
 0.03        2013-01-03
 
