@@ -21,7 +21,7 @@ version 0.03
 
 This is a simple spinner, useful when you want to show some kind of activity 
 during a long-running activity of non-determinant length.  It's loosely based
-on the API from [Term::Spinner](http://search.cpan.org/perldoc?Term::Spinner).  Unlike [Term::Spinner](http://search.cpan.org/perldoc?Term::Spinner) though, this module
+on the API from [Term::Spinner](https://metacpan.org/pod/Term::Spinner).  Unlike [Term::Spinner](https://metacpan.org/pod/Term::Spinner) though, this module
 doesn't have any dependencies outside of modules shipped with Perl itself.
 
 # ATTRIBUTES
@@ -66,6 +66,20 @@ it to `output_handle`.
 
 Finish spinning, and clear the last character printed. If a true value is passed,
 output a newline.
+
+# SEE ALSO
+
+[Term::Spinner](https://metacpan.org/pod/Term::Spinner) is similar to this module, but depends on Moose,
+and only had one release, in 2007.
+
+[Term::Spinner::Color](https://metacpan.org/pod/Term::Spinner::Color) is similar to this module,
+but only has core dependencies, and offers colour as well.
+
+There are many modules for displaying a progress bar rather than a spinner.
+[Term::ProgressBar](https://metacpan.org/pod/Term::ProgressBar) is well documented.
+[Term::ProgressSpinner](https://metacpan.org/pod/Term::ProgressSpinner) displays a progress bar, using one of a range
+of Unicode characters to render the bar.
+Search for "progress" on MetaCPAN to see many more.
 
 # AUTHOR
 

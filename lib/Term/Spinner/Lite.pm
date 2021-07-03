@@ -9,6 +9,8 @@ use IO::Handle;
 use Time::HiRes qw(usleep);
 use Carp qw( croak );
 
+=encoding UTF-8
+
 =head1 SYNOPSIS
 
   use utf8;
@@ -209,3 +211,18 @@ sub done {
 }
 
 1;
+
+=head1 SEE ALSO
+
+L<Term::Spinner> is similar to this module, but depends on Moose,
+and only had one release, in 2007.
+
+L<Term::Spinner::Color> is similar to this module,
+but only has core dependencies, and offers colour as well.
+
+There are many modules for displaying a progress bar rather than a spinner.
+L<Term::ProgressBar> is well documented.
+L<Term::ProgressSpinner> displays a progress bar, using one of a range
+of Unicode characters to render the bar.
+Search for "progress" on MetaCPAN to see many more.
+
